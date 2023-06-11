@@ -12,7 +12,14 @@ const Home = () => {
   const [pinRegex, setPinRegex] = useState("/^\\d+$/");
   const [isSecretMode, setSecretMode] = useState(false);
   const [loading, setLoading] = useState();
-  const [status, setStatus] = useState("");
+  const [error, setError] = useState(null);
+  const [message, setMessage] = useState("");
+
+  useEffect(() => {
+    if (pin?.trim().length === pinLength) {
+      verifyPinCode(pin);
+    }
+  }, [pinLength, pin]);
 
   const verifyPinCode = (value: any) => {
     axios
@@ -26,10 +33,11 @@ const Home = () => {
         }
       )
       .then((response) => {
-        setStatus("success");
+        setError(response?.data?.error);
       })
       .catch((error) => {
-        setStatus("error");
+        setError(error?.response?.data?.error);
+        setMessage(error?.response?.data?.message);
       });
   };
 
@@ -45,12 +53,14 @@ const Home = () => {
           onChange={setPin}
         />
 
-        <button className="button-submit" onClick={() => verifyPinCode(pin)}>
-          Verify
-        </button>
         <div className="request-status-container">
-          {status === "success" && <SuccessIcon />}
-          {status === "error" && <ErrorIcon />}
+          {error === false && <SuccessIcon />}
+          {error === true && (
+            <>
+              <ErrorIcon />
+              <p className="error-message">{message}</p>
+            </>
+          )}
         </div>
       </div>
       <div className="pin-config-container">

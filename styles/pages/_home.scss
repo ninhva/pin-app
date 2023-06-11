@@ -79,6 +79,13 @@
   }
 }
 
+.error-message {
+  color: #fff;
+  margin: 10px 0;
+  font-size: 18px;
+  text-align: center;
+}
+
 .success-container {
   display: flex;
   align-items: center;
@@ -111,7 +118,7 @@
   stroke-width: $stroke-width;
   stroke: $checkmark-color;
   stroke-miterlimit: 10;
-  margin: 10% auto;
+  margin: 20px auto;
   &.success {
     box-shadow: inset 0px 0px 0px $color-success;
     animation: fillsuccess 0.4s ease-in-out 0.4s forwards,
