@@ -70,6 +70,7 @@ const Home = () => {
             <label>PIN Length</label>
             <input
               type="number"
+              name="pinLength"
               value={pinLength}
               onChange={(e) => setPinLength(parseInt(e.target.value, 10))}
             />
@@ -78,6 +79,7 @@ const Home = () => {
             <label>PIN Regex</label>
             <input
               type="text"
+              name="pinRegex"
               value={pinRegex}
               onChange={(e) => setPinRegex(e.target.value)}
             />
@@ -86,6 +88,7 @@ const Home = () => {
             <label>Secret Mode</label>
             <input
               type="checkbox"
+              name="secretMode"
               checked={isSecretMode}
               onChange={(e) => setSecretMode(!isSecretMode)}
             />
