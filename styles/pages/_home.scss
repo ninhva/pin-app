@@ -1,0 +1,63 @@
+.main-title {
+  color: #fff;
+  font-size: 35px;
+  padding: 10px 10px 30px 10px;
+}
+.pin-content {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 100%;
+  column-gap: 10px;
+  padding: 15px 0;
+}
+
+.pin-input {
+  background: #546171;
+  border-radius: 15px;
+  width: 90px;
+  height: 90px;
+  color: #fff;
+  border: 1px solid #212a35;
+  margin: 10px 5px;
+  font-size: 40px;
+  font-weight: 500;
+  box-shadow: none;
+  outline: none;
+  text-align: center;
+}
+
+.pin-config-container {
+  border: 1px solid #fcfcfc;
+  border-radius: 10px;
+  padding: 15px 20px;
+  margin: 50px auto;
+  max-width: 400px;
+  h3 {
+    font-size: 25px;
+    color: #fff;
+  }
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    li {
+      display: block;
+      padding: 10px 0;
+      label {
+        color: #fff;
+        display: inline-block;
+        min-width: 150px;
+      }
+      input {
+        background: #3a4756;
+        border-radius: 5px;
+        color: #fff;
+        font-size: 18px;
+        border: 0;
+        outline: none;
+        padding: 10px 15px;
+      }
+    }
+  }
+}
