@@ -14,12 +14,6 @@ const Home = () => {
   const [loading, setLoading] = useState();
   const [status, setStatus] = useState("");
 
-  // useEffect(() => {
-  //   if (pin?.length === pinLength) {
-  //     verifyPinCode(pin);
-  //   }
-  // }, [pinLength, pin]);
-
   const verifyPinCode = (value: any) => {
     axios
       .post(
@@ -27,8 +21,7 @@ const Home = () => {
         { pin: value, n_pin: pinLength },
         {
           headers: {
-            "Content-Type": "application/json",
-            "X-HTTP-Device-Type": "server",
+            "Content-Type": "application/x-www-form-urlencoded",
           },
         }
       )
